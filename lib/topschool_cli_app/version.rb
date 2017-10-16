@@ -1,0 +1,3 @@
+module TopschoolCliApp
+  VERSION = "0.1.0"
+end
