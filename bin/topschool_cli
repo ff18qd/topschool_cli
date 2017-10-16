@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
+require "bundler/setup"
+require_relative "./lib/topschool_cli_app"
 
-puts "Hello World!"
+TopschoolCliApp::CLI.new.call
