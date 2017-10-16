@@ -1,8 +1,8 @@
 require_relative "./topschool_cli_app/version"
-require_relative './topschool_cli_app/cli'
-require 'open-uri'
-require 'nokogiri'
-require 'pry'
+require_relative "./topschool_cli_app/cli"
+# require 'open-uri'
+# require 'nokogiri'
+# require 'pry'
 
 
 
