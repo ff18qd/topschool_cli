@@ -9,9 +9,12 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'ff18qd'"]
   spec.email         = ["'ff18qd@gmail.com'"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{1. User input which field of Top 10 Engineering Schools they would like to know
+  2. User will get a list of 10 Engineering Schools in that field, ie. Top Electrial Engineering Schools in US
+  3. Cli will ask user if they would like to know more details of one of the top 10 Schools
+  4. User gives a number like 3 then cli will list the 3rd school name and school url for their reference.}
+  spec.description   = %q{ Check if the code is working.}
+  spec.homepage      = "https://github.com/ff18qd/topschool_cli"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
