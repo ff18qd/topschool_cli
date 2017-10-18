@@ -7,6 +7,19 @@ I would like to build a CLI Application with Top 10 Engineering Universities in 
 3. Cli will ask user if they would like to know more details of one of the top 10 Schools
 4. User gives a number like 3 then cli will list the 3rd school name and school url for their reference
 
+url: https://www.topuniversities.com/university-rankings-articles/university-subject-rankings/top-engineering-schools-us
+
+options for universities
+
+how to run the gem in others env: bin folder in path
+
+1. Electrial Engineering Schools
+	1-10
+	show details of one of the top schools
+
+2. Civil Engineering Schools
+
+
 
 TODO: Delete this and the text above, and describe your gem
 

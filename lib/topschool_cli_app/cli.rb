@@ -6,23 +6,36 @@ class TopschoolCliApp::CLI
   end
 
   def list_schools
-    puts "Top 10 engineering schools in US:"
-    puts "top 10 EE schools"
-    puts "top 10 civil engineering schools"
+    # puts "Top 10 engineering schools in US:"
+    # puts "Top 10 Civil Engineering schools"
+    @eeschools = TopschoolCliApp::Topschools.electrical
   end
+
+  # def details(num)
+  #   case num
+  #   when "1"
+  #     puts "1. MIT public age>100 years"
+  #   when "2"
+  #     puts "2. Stanford University private age > 100 years"
+  #   when "3"
+  #     puts "3. UC Berkeley public age > 100 years"
+  #   end
+  # end
 
   def menu
     input = " "
     while input != "exit"
-      puts "Enter the ranking of school that you would like to know more about or type list to see the list again or type exit:"
+      puts "Enter ranking number to see details of top 10 Electrial Engineering schools in US or type list again or type exit:"
       input = gets.strip.downcase
       case input
-      when "1"
-        puts "Top 1st school..."
-      when "2"
-        puts "Top 2nd school..."
       when "list"
         list_schools
+      when "1"
+        puts "1. MIT public age>100 years"
+      when "2"
+        puts "2. Stanford University private age > 100 years"
+      when "3"
+        puts "3. UC Berkeley public age > 100 years"
       else
         puts "Not sure what you want, please type list or type exit:"
       end
