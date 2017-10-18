@@ -19,6 +19,13 @@ how to run the gem in others env: bin folder in path
 
 2. Civil Engineering Schools
 
+What are school details?
+School size
+School age
+School status
+School research
+School focus
+
 
 
 TODO: Delete this and the text above, and describe your gem

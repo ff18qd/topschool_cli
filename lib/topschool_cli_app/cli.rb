@@ -11,17 +11,6 @@ class TopschoolCliApp::CLI
     @eeschools = TopschoolCliApp::Topschools.electrical
   end
 
-  # def details(num)
-  #   case num
-  #   when "1"
-  #     puts "1. MIT public age>100 years"
-  #   when "2"
-  #     puts "2. Stanford University private age > 100 years"
-  #   when "3"
-  #     puts "3. UC Berkeley public age > 100 years"
-  #   end
-  # end
-
   def menu
     input = " "
     while input != "exit"
@@ -31,7 +20,7 @@ class TopschoolCliApp::CLI
       when "list"
         list_schools
       when "1"
-        puts "1. MIT public age>100 years"
+        puts "1. MIT private age>100 years"
       when "2"
         puts "2. Stanford University private age > 100 years"
       when "3"
