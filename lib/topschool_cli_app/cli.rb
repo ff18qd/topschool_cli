@@ -6,9 +6,12 @@ class TopschoolCliApp::CLI
   end
 
   def list_schools
-    # puts "Top 10 engineering schools in US:"
+    puts "Top 10 engineering schools in US:"
     # puts "Top 10 Civil Engineering schools"
     @eeschools = TopschoolCliApp::Topschools.electrical
+    @eeschools.each.with_index(1) do |school,i|
+      puts "#{i}. #{school.name}"
+    end
   end
 
   def menu
@@ -16,18 +19,16 @@ class TopschoolCliApp::CLI
     while input != "exit"
       puts "Enter ranking number to see details of top 10 Electrial Engineering schools in US or type list again or type exit:"
       input = gets.strip.downcase
-      case input
-      when "list"
+
+      if input.to_i > 0
+        the_school = @eeschools[input.to_i - 1]
+        puts "#{the_school.name}-school size #{the_school.size} - school age #{the_school.age}"
+      elsif input == "list"
         list_schools
-      when "1"
-        puts "1. MIT private age>100 years"
-      when "2"
-        puts "2. Stanford University private age > 100 years"
-      when "3"
-        puts "3. UC Berkeley public age > 100 years"
       else
         puts "Not sure what you want, please type list or type exit:"
       end
+
     end
   end
 
