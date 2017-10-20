@@ -1,6 +1,8 @@
 class TopschoolCliApp::CLI
 
   def call
+    # TopschoolCliApp::Topschools.electrical
+    TopschoolCliApp::Scraper.scrape_ee
     list_schools
     menu
   end
@@ -8,7 +10,7 @@ class TopschoolCliApp::CLI
   def list_schools
     puts "Top 10 engineering schools in US:"
     # puts "Top 10 Civil Engineering schools"
-    @eeschools = TopschoolCliApp::Topschools.electrical
+
     @eeschools.each.with_index(1) do |school,i|
       puts "#{i}. #{school.name}"
     end
