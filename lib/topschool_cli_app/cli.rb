@@ -11,9 +11,9 @@ class TopschoolCliApp::CLI
     puts "Top 10 engineering schools in US:"
     # puts "Top 10 Civil Engineering schools"
 
-    @eeschools.each.with_index(1) do |school,i|
-      puts "#{i}. #{school.name}"
-    end
+    # @eeschools.each.with_index(1) do |school,i|
+    #   puts "#{i}. #{school.name}"
+    # end
   end
 
   def menu
@@ -23,8 +23,8 @@ class TopschoolCliApp::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        the_school = @eeschools[input.to_i - 1]
-        puts "#{the_school.name}-school size #{the_school.size} - school age #{the_school.age}"
+        # the_school = @eeschools[input.to_i - 1]
+        # puts "#{the_school.name}-school size #{the_school.size} - school age #{the_school.age}"
       elsif input == "list"
         list_schools
       else
