@@ -3,14 +3,14 @@ class TopschoolCliApp::CLI
   def call
     # TopschoolCliApp::Topschools.electrical
     TopschoolCliApp::Scraper.scrape_ee
-    # TopschoolCliApp::Scraper.makeschool
+    TopschoolCliApp::Scraper.makeschool
     list_schools
     menu
   end
 
   def list_schools
     puts "Top 10 engineering schools in US:"
-    TopschoolCliApp::Scraper.makeschool.each.with_index(1) do |school|
+    TopschoolCliApp::Topschools.all.each.with_index(1) do |school, i|
       puts "#{i}. #{school.name}"
     end
   end
@@ -23,7 +23,7 @@ class TopschoolCliApp::CLI
 
       if TopschoolCliApp::Topschools.find_by_name(input)
         the_school = TopschoolCliApp::Topschools.find_by_name(input)
-        puts "#{the_school.name}-school location #{the_school.location}"
+        puts "#{the_school.name} - #{the_school.location}"
         puts "#{the_school.url}"
         puts "Annual Net Price: #{the_school.annualprice}"
         puts "Campus Setting: #{the_school.campussetting}"

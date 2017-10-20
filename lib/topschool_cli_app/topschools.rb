@@ -3,7 +3,14 @@ class  TopschoolCliApp::Topschools
 
   @@all = []
 
-  def new_from_url(url)
+  def initialize(name = nil, url = nil, location = nil)
+    @name = name
+    @url = url
+    @location = location
+    self.save
+  end
+
+  def self.new_from_url(url)
     html1 = open(url)
     doc1 = Nokogiri::HTML(html1)
     self.new(
@@ -11,13 +18,6 @@ class  TopschoolCliApp::Topschools
       url,
       doc1.css("div.collegeName div").text
     )
-  end
-
-  def initialize(name = nil, url = nil, location = nil)
-    @name = name
-    @url = url
-    @location = location
-    self.save
   end
 
   def save
@@ -37,7 +37,7 @@ class  TopschoolCliApp::Topschools
   end
 
   def annulprice
-    @annualprice =  doc.css("#netPriceOverviewBox div div.number").text
+    @annualprice =  doc.css("div#netPriceOverviewBox div div.number").text
   end
 
   def campussetting

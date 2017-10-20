@@ -14,9 +14,9 @@ class TopschoolCliApp::Scraper
     toplists
   end
 
-  def makeschool
+  def self.makeschool
   #create another method for scraping the show page using the names that you scraped
-    scrape_ee.each do |url|
+    self.scrape_ee.each do |url|
       TopschoolCliApp::Topschools.new_from_url(url)
     end
     # doc1.css("#netPriceOverviewBox div h3").text
