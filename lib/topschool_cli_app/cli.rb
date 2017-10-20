@@ -20,9 +20,9 @@ class TopschoolCliApp::CLI
     while input != "exit"
       puts "Enter school names to see details of top 10 Electrial Engineering schools in US or type list or type exit:"
       input = gets.strip
-
-      if TopschoolCliApp::Topschools.find_by_name(input)
-        the_school = TopschoolCliApp::Topschools.find_by_name(input)
+      index = input.to_i-1
+      if TopschoolCliApp::Topschools.all[index]
+        the_school = TopschoolCliApp::Topschools.all[index]
         puts "#{the_school.name} - #{the_school.location}"
         puts "#{the_school.url}"
         puts "Annual Net Price: #{the_school.annualprice}"

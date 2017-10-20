@@ -16,7 +16,7 @@ class  TopschoolCliApp::Topschools
     self.new(
       doc1.css("div.collegeName a").text,
       url,
-      doc1.css("div.collegeName div").text
+      doc1.css("div.cfRenderTextOnImage div.ellipsis")[1].text
     )
   end
 
@@ -36,7 +36,7 @@ class  TopschoolCliApp::Topschools
     @loan ||= doc.css("#loanOverviewBox div div.number").text
   end
 
-  def annulprice
+  def annualprice
     @annualprice =  doc.css("div#netPriceOverviewBox div div.number").text
   end
 

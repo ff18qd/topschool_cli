@@ -19,19 +19,6 @@ class TopschoolCliApp::Scraper
     self.scrape_ee.each do |url|
       TopschoolCliApp::Topschools.new_from_url(url)
     end
-    # doc1.css("#netPriceOverviewBox div h3").text
-    # annual price number: doc1.css("#netPriceOverviewBox div div.number").text
-    # doc1.css("#loanOverviewBox div h3").text
-    # loan price number: doc1.css("#loanOverviewBox div div.number").text
-    # doc1.css("#campusSettingOverviewBox div h3").text
-    # campus setting: doc1.css("#campusSettingOverviewBox div div.contents").text
-    # annualprice = doc1.css("#netPriceOverviewBox div div.number").text
-    # loan = doc1.css("#loanOverviewBox div div.number").text
-    # campus = doc1.css("#campusSettingOverviewBox div div.contents").text
-    # binding.pry
-    # puts "Annual price: #{annualprice}"
-    # puts "Avg student loan: #{loan}"
-    # puts "Campus Setting: #{campus}"
   end
 
 end
