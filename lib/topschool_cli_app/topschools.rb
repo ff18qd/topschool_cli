@@ -44,8 +44,4 @@ class  TopschoolCliApp::Topschools
     @campus ||= doc.css("#campusSettingOverviewBox div div.contents").text
   end
 
-  def self.find_by_name(name)
-    self.all.find {|i| i.name == name}
-  end
-
 end

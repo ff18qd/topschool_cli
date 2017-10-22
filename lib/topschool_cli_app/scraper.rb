@@ -1,9 +1,8 @@
 class TopschoolCliApp::Scraper
 
   def self.scrape_ee
-    # this method is only used to grab the names of the schools (not for creating objects)
+    # this method is only used to grab the urls of the schools (not for creating objects)
     html = open("https://www.collegefactual.com/majors/engineering/ee-electrical-engineering/rankings/top-ranked/")
-    # html = open("https://www.topuniversities.com/university-rankings-articles/university-subject-rankings/top-engineering-schools-us")
     doc = Nokogiri::HTML(html)
 
     toplists = []
