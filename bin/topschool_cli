@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
-require "./lib/topschool_cli_app"
+
+require_relative "../lib/topschool_cli_app"
 
 TopschoolCliApp::CLI.new.call

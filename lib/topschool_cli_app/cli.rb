@@ -1,7 +1,7 @@
 class TopschoolCliApp::CLI
 
   def call
-    TopschoolCliApp::Scraper.scrape_ee
+    #TopschoolCliApp::Scraper.scrape_ee
     TopschoolCliApp::Scraper.makeschool
     list_schools
     menu
@@ -20,7 +20,7 @@ class TopschoolCliApp::CLI
       puts "Enter school ranking number to see details or type list to see the list again or type exit:"
       input = gets.strip
       index = input.to_i-1
-      if TopschoolCliApp::Topschools.all[index] && index.between?(0,9)
+      if index.between?(0,9)
         the_school = TopschoolCliApp::Topschools.all[index]
         puts "#{the_school.name} - #{the_school.location}"
         puts "#{the_school.url}"

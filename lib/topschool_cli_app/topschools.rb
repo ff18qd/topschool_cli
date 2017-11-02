@@ -1,5 +1,5 @@
 class  TopschoolCliApp::Topschools
-  attr_accessor :annualprice, :loan, :campus, :url, :name, :location, :doc
+  attr_accessor :annualprice, :loan, :campus, :url, :name, :location
 
   @@all = []
 
@@ -29,7 +29,7 @@ class  TopschoolCliApp::Topschools
   end
 
   def doc
-    @doc = Nokogiri::HTML(open(self.url))
+    Nokogiri::HTML(open(self.url))
   end
 
   def loan
@@ -37,11 +37,22 @@ class  TopschoolCliApp::Topschools
   end
 
   def annualprice
-    @annualprice =  doc.css("div#netPriceOverviewBox div div.number").text
+    @annualprice ||=  doc.css("div#netPriceOverviewBox div div.number").text
   end
 
   def campussetting
     @campus ||= doc.css("#campusSettingOverviewBox div div.contents").text
+  end
+
+  def self.annualprice_greater_than(num)
+    results = []
+    self.all.each do |school|
+      # binding.pry
+      if school.annualprice.gsub('$','').gsub(',','').to_i > num
+        results << school
+      end
+    end
+    results
   end
 
 end
